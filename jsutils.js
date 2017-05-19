@@ -1,6 +1,8 @@
 // --------------------------------
 // --- JS UTILS v0.1 by Zerthox ---
 // --------------------------------
+// Source: github.com/Zerthox/JS-Utils
+// License: MIT
 
 // Strings
 String.prototype.capitalize = function() {
