@@ -37,7 +37,7 @@ Array.prototype.each = function(f) {
 	if (f instanceof Function) {
 		for (var i = 0; i < this.length; i++) {
 			var v = this[i];
-			f.call(v, i, v]);
+			f.call(v, i, v);
 		}
 	}
 };
