@@ -5,93 +5,135 @@
 // License: MIT
 
 // Strings
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-};
+Object.defineProperty(String.prototype, "capitalize", {
+	value: function() {
+	    return this.charAt(0).toUpperCase() + this.slice(1);
+	},
+	enumberable: false
+});
 
-String.prototype.replaceAll = function(s = "", r = "") {
-	return this.split(s).join(r);
-};
+Object.defineProperty(String.prototype, "replaceAll", {
+	value: function(s = "", r = "") {
+		return this.split(s).join(r);
+	},
+	enumberable: false
+});
 
-String.prototype.remove = function(i = 0) {
-	if (typeof i === "number") {
-		if (i === 0) return this.toString();
-    	else return this.slice(0, i - 1) + this.slice(i);
-	}
-	else return this.split(i).join("");
-};
+Object.defineProperty(String.prototype, "remove", {
+	value: function(i = 0) {
+		if (typeof i === "number") {
+			if (i === 0) return this.toString();
+	    	else return this.slice(0, i - 1) + this.slice(i);
+		}
+		else return this.split(i).join("");
+	},
+	enumberable: false
+});
 
-String.prototype.get = function(i = undefined) {
-	if (typeof i === "undefined") return this.toString();
-	else return this.slice(i).charAt(0);
-};
+Object.defineProperty(String.prototype, "get", {
+	value: function(i = undefined) {
+		if (typeof i === "undefined") return this.toString();
+		else return this.slice(i).charAt(0);
+	},
+	enumberable: false
+});
 
-String.prototype.classify = function() {
-    return this.toLowerCase().replace(/ /g, "-");
-};
+Object.defineProperty(String.prototype, "classify", {
+	value: function() {
+	    return this.toLowerCase().replace(/ /g, "-");
+	},
+	enumberable: false
+});
 
 // Arrays
-Array.prototype.last = function(i = 0) {
-    return this[this.length - i - 1];
-};
+Object.defineProperty(Array.prototype, "last", {
+	value: function(i = 0) {
+	    return this[this.length - i - 1];
+	},
+	enumberable: false
+});
 
-Array.prototype.contains = function(s) {
-	if (this.indexOf(s) > -1) return true;
-	else return false;
-};
+Object.defineProperty(Array.prototype, "contains", {
+	value: function(s) {
+		if (this.indexOf(s) > -1) return true;
+		else return false;
+	},
+	enumberable: false
+});
 
-Array.prototype.each = function(f) {
-	if (f instanceof Function) {
-		for (var i = 0; i < this.length; i++) {
-			var v = this[i];
-			f.call(v, i, v);
+Object.defineProperty(Array.prototype, "each", {
+	value: function(f) {
+		if (f instanceof Function) {
+			for (var i = 0; i < this.length; i++) {
+				var v = this[i];
+				f.call(v, i, v);
+			}
 		}
-	}
-};
+	},
+	enumberable: false
+});
 
 // Objects
-Object.prototype.keys = function() {
-	return Object.keys(this);
-};
+Object.defineProperty(Object.prototype, "keys", {
+	value: function() {
+		return Object.keys(this);
+	},
+	enumberable: false
+});
 
-Object.prototype.contains = function(s) {
-	var a = Object.keys(this).map(key => this[key]);
-	if (this.hasOwnProperty(s) || a.indexOf(s) > -1) return true;
-	else return false;
-};
+Object.defineProperty(Object.prototype, "contains", {
+	value: function(s) {
+		var a = Object.keys(this).map(key => this[key]);
+		if (this.hasOwnProperty(s) || a.indexOf(s) > -1) return true;
+		else return false;
+	},
+	enumberable: false
+});
 
-Object.prototype.containsValue = function(s) {
-	var a = Object.keys(this).map(key => this[key]);
-	if (a.indexOf(s) > -1) return true;
-	else return false;
-};
+Object.defineProperty(Object.prototype, "containsValue", {
+	value: function(s) {
+		var a = Object.keys(this).map(key => this[key]);
+		if (a.indexOf(s) > -1) return true;
+		else return false;
+	},
+	enumberable: false
+});
 
-Object.prototype.find = function(s) {
-	var r = {}, a = Object.keys(this);
-	for (var i = 0; i < a.length; i++) {
-		var k = a[i], v = this[k];
-		if (v === s) r[k] = v;
-	}
-	return r;
-};
-
-Object.prototype.findKeys = function(s) {
-	var r = [], a = Object.keys(this);
-	for (var i = 0; i < a.length; i++) {
-		var k = a[i];
-		if (this[k] === s) r.push(k);
-	}
-	return r;
-};
-
-Object.prototype.each = function(f) {
-	if (f instanceof Function) {
-		var a = Object.keys(this);
+Object.defineProperty(Object.prototype, "find", {
+	value: function(s) {
+		var r = {}, a = Object.keys(this);
 		for (var i = 0; i < a.length; i++) {
-			var k = a[i], v = this[a[i]];
-			f.call(v, k, v);
+			var k = a[i], v = this[k];
+			if (v === s) r[k] = v;
 		}
-	}
-};
+		return r;
+	},
+	enumberable: false
+});
+
+Object.defineProperty(Object.prototype, "findKeys", {
+	value: function(s) {
+		var r = [], a = Object.keys(this);
+		for (var i = 0; i < a.length; i++) {
+			var k = a[i];
+			if (this[k] === s) r.push(k);
+		}
+		return r;
+	},
+	enumberable: false
+});
+
+Object.defineProperty(Object.prototype, "each", {
+	value: function(f) {
+		if (f instanceof Function) {
+			var a = Object.keys(this);
+			for (var i = 0; i < a.length; i++) {
+				var k = a[i], v = this[a[i]];
+				f.call(v, k, v);
+			}
+		}
+	},
+	enumberable: false
+});
 
 // --------------------------------
