@@ -1,2 +1,4 @@
 # JS Utils
-Just a little collection of useful things for JS coding
+JS Utils is a little collection of useful things for JS coding
+
+The Documentation can be found here: [Documentation](wiki/Documentation)
