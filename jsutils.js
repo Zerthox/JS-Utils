@@ -16,6 +16,7 @@ Object.defineProperty(String.prototype, "replaceAll", {
 	value: function(s = "", r = "") {
 		return this.split(s).join(r);
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -27,6 +28,7 @@ Object.defineProperty(String.prototype, "remove", {
 		}
 		else return this.split(i).join("");
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -35,6 +37,7 @@ Object.defineProperty(String.prototype, "get", {
 		if (typeof i === "undefined") return this.toString();
 		else return this.slice(i).charAt(0);
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -42,6 +45,7 @@ Object.defineProperty(String.prototype, "classify", {
 	value: function() {
 	    return this.toLowerCase().replace(/ /g, "-");
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -50,6 +54,7 @@ Object.defineProperty(Array.prototype, "last", {
 	value: function(i = 0) {
 	    return this[this.length - i - 1];
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -58,6 +63,7 @@ Object.defineProperty(Array.prototype, "contains", {
 		if (this.indexOf(s) > -1) return true;
 		else return false;
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -70,6 +76,7 @@ Object.defineProperty(Array.prototype, "each", {
 			}
 		}
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -78,6 +85,7 @@ Object.defineProperty(Object.prototype, "keys", {
 	value: function() {
 		return Object.keys(this);
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -87,6 +95,7 @@ Object.defineProperty(Object.prototype, "contains", {
 		if (this.hasOwnProperty(s) || a.indexOf(s) > -1) return true;
 		else return false;
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -96,6 +105,7 @@ Object.defineProperty(Object.prototype, "containsValue", {
 		if (a.indexOf(s) > -1) return true;
 		else return false;
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -108,6 +118,7 @@ Object.defineProperty(Object.prototype, "find", {
 		}
 		return r;
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -120,6 +131,7 @@ Object.defineProperty(Object.prototype, "findKeys", {
 		}
 		return r;
 	},
+	configurable: true,
 	enumberable: false
 });
 
@@ -133,6 +145,7 @@ Object.defineProperty(Object.prototype, "each", {
 			}
 		}
 	},
+	configurable: true,
 	enumberable: false
 });
 
