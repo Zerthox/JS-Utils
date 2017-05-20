@@ -35,6 +35,11 @@ Array.prototype.last = function(i = 0) {
     return this[this.length - i - 1];
 };
 
+Array.prototype.contains = function(s) {
+	if (this.indexOf(s) > -1) return true;
+	else return false;
+};
+
 Array.prototype.each = function(f) {
 	if (f instanceof Function) {
 		for (var i = 0; i < this.length; i++) {
