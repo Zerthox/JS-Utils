@@ -13,6 +13,14 @@ Object.defineProperty(String.prototype, "capitalize", {
 	enumberable: false
 });
 
+Object.defineProperty(String.prototype, "capitalizeAll", {
+	value: function() {
+		return this.split(/ /g).map(v => v.charAt(0).toUpperCase() + v.slice(1)).join(" ");
+	},
+	configurable: true,
+	enumberable: false
+});
+
 Object.defineProperty(String.prototype, "replaceAll", {
 	value: function(s = "", r = "") {
 		return this.split(s).join(r);
@@ -114,8 +122,8 @@ Object.defineProperty(Object.prototype, "find", {
 	value: function(s) {
 		var r = {}, a = Object.keys(this);
 		for (var i = 0; i < a.length; i++) {
-			var k = a[i], v = this[k];
-			if (v === s) r[k] = v;
+			var v = this[k];
+			if (v === s) r[a[i]] = v;
 		}
 		return r;
 	},
@@ -141,7 +149,7 @@ Object.defineProperty(Object.prototype, "each", {
 		if (f instanceof Function) {
 			var a = Object.keys(this);
 			for (var i = 0; i < a.length; i++) {
-				var k = a[i], v = this[a[i]];
+				var k = a[i], v = this[k];
 				f.call(v, k, v);
 			}
 		}
