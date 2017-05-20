@@ -79,10 +79,9 @@ Object.defineProperty(Array.prototype, "contains", {
 Object.defineProperty(Array.prototype, "each", {
 	value: function(f) {
 		if (f instanceof Function) {
-			for (var i = 0; i < this.length; i++) {
-				var v = this[i];
+			this.map(function(v, i) {
 				f.call(v, i, v);
-			}
+			});
 		}
 	},
 	configurable: true,
@@ -122,8 +121,8 @@ Object.defineProperty(Object.prototype, "find", {
 	value: function(s) {
 		var r = {}, a = Object.keys(this);
 		for (var i = 0; i < a.length; i++) {
-			var v = this[k];
-			if (v === s) r[a[i]] = v;
+			var k = a[i], v = this[k];
+			if (v === s) r[k] = v;
 		}
 		return r;
 	},
