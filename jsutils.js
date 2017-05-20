@@ -54,6 +54,18 @@ Object.prototype.keys = function() {
 	return Object.keys(this);
 };
 
+Object.prototype.contains = function(s) {
+	var a = Object.keys(this).map(key => this[key]);
+	if (this.hasOwnProperty(s) || a.indexOf(s) > -1) return true;
+	else return false;
+};
+
+Object.prototype.containsValue = function(s) {
+	var a = Object.keys(this).map(key => this[key]);
+	if (a.indexOf(s) > -1) return true;
+	else return false;
+};
+
 Object.prototype.find = function(s) {
 	var r = {}, a = Object.keys(this);
 	for (var i = 0; i < a.length; i++) {
