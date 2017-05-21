@@ -1,5 +1,5 @@
 // --------------------------------
-// --- JS UTILS v0.2 by Zerthox ---
+// --- JS UTILS v0.3 by Zerthox ---
 // --------------------------------
 // Source: github.com/Zerthox/JS-Utils
 // License: MIT
