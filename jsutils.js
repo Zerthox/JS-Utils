@@ -4,6 +4,23 @@
 // Source: github.com/Zerthox/JS-Utils
 // License: MIT
 
+// Numbers
+Object.defineProperty(Number.prototype, "cap", {
+	value: function(max) {
+	    return Math.min(this, max);
+	},
+	configurable: true,
+	enumberable: false
+});
+
+Object.defineProperty(Number.prototype, "range", {
+	value: function(min, max) {
+	    return Math.min(Math.max(this, min), max);
+	},
+	configurable: true,
+	enumberable: false
+});
+
 // Strings
 Object.defineProperty(String.prototype, "capitalize", {
 	value: function() {
