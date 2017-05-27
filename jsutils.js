@@ -24,7 +24,7 @@ Object.defineProperty(Number.prototype, "range", {
 // Strings
 Object.defineProperty(String.prototype, "calc", {
 	value: function() {
-			if (!isNaN(parseFloat(this)))
+			if (!isNaN(parseFloat(this)) || this.startsWith("("))
 				return new Function("return " + this)();
 	},
 	configurable: true,
