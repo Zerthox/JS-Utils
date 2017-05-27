@@ -1,5 +1,5 @@
 // --------------------------------
-// --- JS UTILS v0.41 by Zerthox ---
+// --- JS UTILS v0.5 by Zerthox ---
 // --------------------------------
 // Source: github.com/Zerthox/JS-Utils
 // License: MIT
@@ -179,6 +179,44 @@ Object.defineProperty(Object.prototype, "each", {
 			}
 		}
 	},
+	configurable: true,
+	enumberable: false
+});
+
+// Math functions
+Object.defineProperty(Math, "factorial", {
+	value: function(n) {
+	    for (i = n; i > 1; i--) {
+	    	n *= i - 1;
+	    }
+	    return n;
+	},
+	configurable: true,
+	enumberable: false
+});
+Object.defineProperty(Math, "fact", {
+	value: Math.factorial,
+	configurable: true,
+	enumberable: false
+});
+Object.defineProperty(Math, "factit", {
+	value: Math.factorial,
+	configurable: true,
+	enumberable: false
+});
+
+Object.defineProperty(Math, "factorialrec", {
+	value: function(n) {
+	    if (n > 0)
+	    	return n * Math.factrec(n - 1);
+	    else
+	    	return 1;
+	},
+	configurable: true,
+	enumberable: false
+});
+Object.defineProperty(Math, "factrec", {
+	value: Math.factorialrec,
 	configurable: true,
 	enumberable: false
 });
