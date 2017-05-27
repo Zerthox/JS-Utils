@@ -1,5 +1,5 @@
 // --------------------------------
-// --- JS UTILS v0.3 by Zerthox ---
+// --- JS UTILS v0.31 by Zerthox ---
 // --------------------------------
 // Source: github.com/Zerthox/JS-Utils
 // License: MIT
@@ -22,6 +22,15 @@ Object.defineProperty(Number.prototype, "range", {
 });
 
 // Strings
+Object.defineProperty(String.prototype, "calc", {
+	value: function() {
+			if (!isNaN(parseFloat(this)))
+				return new Function("return " + this)();
+	},
+	configurable: true,
+	enumberable: false
+});
+
 Object.defineProperty(String.prototype, "capitalize", {
 	value: function() {
 	    return this.charAt(0).toUpperCase() + this.slice(1);
