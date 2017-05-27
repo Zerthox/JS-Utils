@@ -1,5 +1,5 @@
 // --------------------------------
-// --- JS UTILS v0.5 by Zerthox ---
+// --- JS UTILS v0.51 by Zerthox ---
 // --------------------------------
 // Source: github.com/Zerthox/JS-Utils
 // License: MIT
@@ -24,7 +24,7 @@ Object.defineProperty(Number.prototype, "range", {
 // Strings
 Object.defineProperty(String.prototype, "calc", {
 	value: function() {
-			if (!isNaN(parseFloat(this)) || this.startsWith("("))
+			if (!isNaN(parseFloat(this)) || this.startsWith("(") || this.startsWith("Math"))
 				return new Function("return " + this.split("^").join("**"))();
 	},
 	configurable: true,
