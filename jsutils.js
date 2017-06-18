@@ -76,6 +76,39 @@ Object.defineProperty(String.prototype, "get", {
 	enumberable: false
 });
 
+Object.defineProperty(String.prototype, "contains", {
+	value: function(s = "") {
+			if (s instanceof RegExp)
+				return RegExp(s).test(this);
+			else
+				return (this.indexOf(s) > -1);
+	},
+	configurable: true,
+	enumberable: false
+});
+
+Object.defineProperty(String.prototype, "hasStart", {
+	value: function(s = "") {
+			if (s instanceof RegExp)
+				return RegExp("^" + s).test(this);
+			else
+				return this.startsWith(s);
+	},
+	configurable: true,
+	enumberable: false
+});
+
+Object.defineProperty(String.prototype, "hasEnd", {
+	value: function(s = "") {
+			if (s instanceof RegExp)
+				return RegExp(s + "$").test(this);
+			else
+				return this.endsWith(s);
+	},
+	configurable: true,
+	enumberable: false
+});
+
 Object.defineProperty(String.prototype, "classify", {
 	value: function() {
 	    return this.toLowerCase().replace(/ /g, "-");
@@ -208,7 +241,7 @@ Object.defineProperty(Math, "factit", {
 Object.defineProperty(Math, "factorialrec", {
 	value: function(n) {
 	    if (n > 0)
-	    	return n * Math.factrec(n - 1);
+	    	return n * Math.factorialrec(n - 1);
 	    else
 	    	return 1;
 	},
