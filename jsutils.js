@@ -135,6 +135,18 @@ Object.defineProperty(Array.prototype, "contains", {
 	enumberable: false
 });
 
+Object.defineProperty(Array.prototype, "remove", {
+	value: function(s) {
+		var i = this.indexOf(s);
+		if (i > -1) {
+			this.splice(i, 1);
+			return this;
+		}
+	},
+	configurable: true,
+	enumberable: false
+});
+
 Object.defineProperty(Array.prototype, "each", {
 	value: function(f) {
 		if (f instanceof Function) {
