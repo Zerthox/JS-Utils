@@ -126,15 +126,6 @@ Object.defineProperty(Array.prototype, "last", {
 	enumberable: false
 });
 
-Object.defineProperty(Array.prototype, "contains", {
-	value: function(s) {
-		if (this.indexOf(s) > -1) return true;
-		else return false;
-	},
-	configurable: true,
-	enumberable: false
-});
-
 Object.defineProperty(Array.prototype, "remove", {
 	value: function(s) {
 		var i = this.indexOf(s);
