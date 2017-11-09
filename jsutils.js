@@ -222,7 +222,7 @@ Object.defineProperty(Object.prototype, "each", {
 // Math functions
 Object.defineProperty(Math, "factorial", {
 	value: function(n) {
-	    for (i = n; i > 1; i--) {
+	    for (var i = n; i > 1; i--) {
 	    	n *= i - 1;
 	    }
 	    return n;
@@ -230,29 +230,17 @@ Object.defineProperty(Math, "factorial", {
 	configurable: true,
 	enumberable: false
 });
-Object.defineProperty(Math, "fact", {
-	value: Math.factorial,
-	configurable: true,
-	enumberable: false
-});
-Object.defineProperty(Math, "factit", {
-	value: Math.factorial,
-	configurable: true,
-	enumberable: false
-});
 
-Object.defineProperty(Math, "factorialrec", {
-	value: function(n) {
-	    if (n > 0)
-	    	return n * Math.factorialrec(n - 1);
-	    else
-	    	return 1;
+Object.defineProperty(Math, "binomial", {
+	value: function(n = 0, k = 0) {
+		function f(n) {
+			for (var i = n; i > 1; i--) {
+				n *= i - 1;
+			}
+			return n;
+		}
+		return f(n) / (f(k) * f(n - k));
 	},
-	configurable: true,
-	enumberable: false
-});
-Object.defineProperty(Math, "factrec", {
-	value: Math.factorialrec,
 	configurable: true,
 	enumberable: false
 });
