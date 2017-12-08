@@ -128,7 +128,7 @@ Object.defineProperty(Array.prototype, "last", {
 
 Object.defineProperty(Array.prototype, "get", {
 	value: function(i = 0) {
-		if (i < 0) return this[this.length - i - 1];
+		if (i < 0) return this[this.length + i];
 		else return this[i];
 	},
 	configurable: true,
