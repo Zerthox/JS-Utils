@@ -91,7 +91,7 @@ a.each(function (index, value) {
 ```
 
 ### Get `a.get(i)`
->Get the last entry with the index `i` from an array. Negative indexes count from the last entry.  
+>Get the entry with the index `i` from an array. Negative indexes count from the last entry.  
 **Arguments:** `i: integer`
 ```js
 var a = [1, 2, 3, 4, 5];
